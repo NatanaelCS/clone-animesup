@@ -1,6 +1,7 @@
 /* eslint-disable no-use-before-define */
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import Header from '../components/Header-component'
 import Footer from '../components/Footer-component'
 import { Container } from '../styles/MainComponents'
@@ -20,33 +21,142 @@ const Home: React.FC = () => {
         <div className="links">
           <nav>
             <ul>
-              <li><a href='/'>#</a></li>
-              <li><a href='/'>A</a></li>
-              <li><a href='/'>B</a></li>
-              <li><a href='/'>C</a></li>
-              <li><a href='/'>D</a></li>
-              <li><a href='/'>E</a></li>
-              <li><a href='/'>F</a></li>
-              <li><a href='/'>G</a></li>
-              <li><a href='/'>H</a></li>
-              <li><a href='/'>I</a></li>
-              <li><a href='/'>J</a></li>
-              <li><a href='/'>K</a></li>
-              <li><a href='/'>L</a></li>
-              <li><a href='/'>M</a></li>
-              <li><a href='/'>N</a></li>
-              <li><a href='/'>O</a></li>
-              <li><a href='/'>P</a></li>
-              <li><a href='/'>Q</a></li>
-              <li><a href='/'>R</a></li>
-              <li><a href='/'>S</a></li>
-              <li><a href='/'>T</a></li>
-              <li><a href='/'>U</a></li>
-              <li><a href='/'>V</a></li>
-              <li><a href='/'>W</a></li>
-              <li><a href='/'>X</a></li>
-              <li><a href='/'>Y</a></li>
-              <li><a href='/'>Z</a></li>
+
+              <Link href='/'>
+                <li>
+                  <a>#</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>A</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>B</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>C</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>D</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>E</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>F</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>G</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>H</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>I</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>J</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>K</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>L</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>M</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>N</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>O</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>P</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>Q</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>R</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>S</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>T</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>U</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>V</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>W</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>X</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>Y</a>
+                </li>
+              </Link>
+              <Link href='/'>
+                <li>
+                  <a>Z</a>
+                </li>
+              </Link>
             </ul>
           </nav>
         </div>
