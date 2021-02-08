@@ -6,8 +6,9 @@ import Header from '../components/Header-component'
 import Footer from '../components/Footer-component'
 import { Container } from '../styles/MainComponents'
 import { HomeArea } from '../styles/pages/Home-page'
+import { NextPage } from 'next'
 
-const Home: React.FC = () => {
+const Home: NextPage = () => {
   return (
     <div>
       <Head>

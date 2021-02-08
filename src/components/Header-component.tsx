@@ -2,6 +2,7 @@ import React from 'react'
 import { BsArrowDown, BsFillPersonFill } from 'react-icons/bs'
 import { AiOutlineSwap } from 'react-icons/ai'
 import { FiSearch } from 'react-icons/fi'
+import Link from 'next/link'
 
 import { Container } from '../styles/MainComponents'
 import { HeaderArea } from '../styles/components/Header-styled'
@@ -21,35 +22,41 @@ export default function Header() {
             <nav>
               <ul>
                 <li>
-                  <a href="/">
-                    Animes
-                  </a>
+                  <Link href="/">
+                    <a >Animes</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/">
-                    Calendário
-                  </a>
+                  <Link href="/">
+                    <a >Calendário</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/">
-                    Gêneros
-                    <div className="arrow">
-                      <BsArrowDown color='#fff' size={15} />
-                    </div>
+                  <Link href="/">
+                    <a>
+                      Gêneros
+                      <div className="arrow">
+                        <BsArrowDown color='#fff' size={15} />
+                      </div>
                     </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/">
-                    Pedidos
-                    <div className="arrow ped">
-                      <AiOutlineSwap color='#fff' size={14} />
-                    </div>
+                  <Link href="/">
+                    <a>
+                      Pedidos
+                      <div className="arrow ped">
+                        <AiOutlineSwap color='#fff' size={14} />
+                      </div>
                     </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/">
-                    Discord
-                  </a>
+                  <Link href="/">
+                    <a>
+                      Discord
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
