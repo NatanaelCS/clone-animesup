@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
 
           <link
             rel="icon"
-            href="https://rocketseat.com.br/favicon.ico"
+            href="https://animesup.net/wp-content/uploads/2020/08/cropped-ico10-32x32.png" sizes="32x32"
           />
 
         </Head>

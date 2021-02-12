@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const FooterArea = styled.footer`
   color: #fff;
   font-family: 'Roboto', serif;
+  border-top: 1px solid rgba(37,37,37,.7);
 
   .info {
     display: flex;
@@ -51,14 +52,14 @@ export const FooterArea = styled.footer`
 
       p {
       font-size: 14px;
-      
+
       }
     }
-    
+
   }
 
   .copy {
-    border-top: 1px solid #333;
+    border-top: 1px solid rgba(37,37,37,.7);
     margin: 0 35px;
     padding: 40px 0;
     font-size: 12px;
