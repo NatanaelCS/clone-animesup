@@ -14,6 +14,7 @@ export const ContentHeader = styled.div`
   width: 100%;
   border-left: 3.5px solid #f00;
   padding-left: 10px;
+  padding-right: 20px;
 `;
 
 export const Title = styled.div`

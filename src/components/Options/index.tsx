@@ -1,5 +1,5 @@
-import { wrap } from 'module'
 import Link from 'next/link'
+import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai'
 import { useState, useEffect } from 'react'
 import Cards from '../Cards'
 import {
@@ -56,7 +56,10 @@ export default function Options({ title, views, arrow, border, data, width, heig
 
             {arrow
               ? (
-                <ButtonSControll>Arrow</ButtonSControll>
+                <ButtonSControll>
+                  <AiFillCaretLeft />
+                  <AiFillCaretRight />
+                </ButtonSControll>
               )
               : ''
             }
