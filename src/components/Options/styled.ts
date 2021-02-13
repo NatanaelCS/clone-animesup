@@ -6,11 +6,6 @@ export const Container = styled.div`
   margin: 40px 50px 0px 50px;
   padding-bottom: 20px;
   border-bottom: ${props => props.border ? '1px solid rgba(37,37,37,.7)' : '0'} ;
-
-
-  :last-child {
-    border-bottom: 0;
-  }
 `;
 
 export const ContentHeader = styled.div`
@@ -30,7 +25,21 @@ export const ContentViews = styled.div`
 `;
 
 export const ViewAll = styled.div`
+  span {
+    font-size: 14px;
+    color: #aaa;
+  }
 
+  a {
+    display: inline-block;
+    text-decoration:none;
+    color: #fff;
+    background-color: #f00;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 2px 7px;
+    margin: 0 10px;
+  }
 `;
 
 export const ButtonSControll = styled.div`
@@ -38,29 +47,11 @@ export const ButtonSControll = styled.div`
 `;
 
 export const ContentBody = styled.div`
-
+  display:flex;
+  width:100%;
+  overflow:hidden;
 `;
 
-export const OptionsCard = styled.div`
-  width: 195px;
 
-`;
 
-export const PlayImage = styled.div`
-  border-radius: 5px;
-  width: 195px;
-  height: 273px;
-  margin-top: 20px;
-  margin-bottom:15px;
-`;
 
-export const CardImage = styled.img`
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-`;
-
-export const CardTitle = styled.div`
-  width: 100%;
-  text-align:center;
-`;

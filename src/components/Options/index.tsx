@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import Cards from '../Cards'
 import {
   Container,
   ContentHeader,
@@ -6,11 +8,7 @@ import {
   ContentViews,
   ViewAll,
   ButtonSControll,
-  ContentBody,
-  OptionsCard,
-  PlayImage,
-  CardImage,
-  CardTitle
+  ContentBody
 } from './styled'
 
 
@@ -20,9 +18,20 @@ type OptionsProps = {
   views: boolean
   arrow: boolean
   border: boolean
+  data: [
+    name: string,
+    url: string
+  ]
+  // width: boolean
 }
 
-export default function Options({ title, views, arrow, border }: OptionsProps) {
+export default function Options({ title, views, arrow, border, data }: OptionsProps) {
+  const [itens, setItens] = useState([])
+
+  useEffect(() => {
+    setItens(data)
+  }, [])
+
   return (
     <>
       <Container border={border}>
@@ -33,7 +42,7 @@ export default function Options({ title, views, arrow, border }: OptionsProps) {
             {views
               ? (
                 <ViewAll>
-
+                  <span>28,052</span>
                   <Link href=''>
                     <a>Ver todos</a>
                   </Link>
@@ -53,12 +62,12 @@ export default function Options({ title, views, arrow, border }: OptionsProps) {
         </ContentHeader>
 
         <ContentBody>
-          <OptionsCard>
-            <PlayImage>
-              <CardImage src='https://image.tmdb.org/t/p/w185/kSltzpIOKIjXGWgxc07rzikynvG.jpg' />
-            </PlayImage>
-            <CardTitle>Hataraku Saibou</CardTitle>
-          </OptionsCard>
+
+          {itens.map(item => (
+            <>
+              <Cards name={item.name} url={item.url} />
+            </>
+          ))}
         </ContentBody>
       </Container>
     </>

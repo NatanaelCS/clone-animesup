@@ -5,7 +5,9 @@ import Layout from '../components/Layout'
 import Links from '../components/Links'
 import Options from '../components/Options'
 
-export default function Home() {
+import database from '../database/database'
+
+export default function Home({ launch }) {
   return (
     <>
       <Head>
@@ -19,26 +21,45 @@ export default function Home() {
           views={false}
           arrow
           border
+          data={launch}
+          // width
         />
         <Options
           title='Adicionados Recentemente'
           views
           arrow={false}
           border
+          data={launch}
+          // width={false}
         />
         <Options
           title='Filmes'
           views
           arrow
           border
+          data={launch}
+          // width
         />
         <Options
           title='Últimos animes Adicionados'
           views
           arrow
           border={false}
+          data={launch}
+          // width
         />
       </Layout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const { launch } = database;
+
+  return {
+    props: {
+      launch,
+    },
+    revalidate: 10
+  }
 }
