@@ -1,4 +1,4 @@
-import backgroundImage from '../assets/fundogk.jpg'
+import backgroundImage from '../images/fundogk.jpg'
 
 const theme = {
   colors: {
