@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const LinksContainer = styled.div`
   font-family: 'Roboto', serif;
+  padding-top: 70px;
 
   nav {
     ul {
