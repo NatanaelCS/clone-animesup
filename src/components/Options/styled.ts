@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   box-sizing: border-box;
   max-width: 1200px;
-  margin: 40px 50px 0px 50px;
+  margin: 40px 40px 0px 50px;
   padding-bottom: 20px;
   border-bottom: ${props => props.border ? '1px solid rgba(37,37,37,.7)' : '0'} ;
 `;
@@ -50,6 +50,7 @@ export const ContentBody = styled.div`
   display:flex;
   width:100%;
   overflow:hidden;
+  flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'} ;
 `;
 
 

@@ -1,3 +1,4 @@
+import { wrap } from 'module'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import Cards from '../Cards'
@@ -22,10 +23,12 @@ type OptionsProps = {
     name: string,
     url: string
   ]
-  // width: boolean
+  width: boolean
+  height: boolean
+  wrap: boolean
 }
 
-export default function Options({ title, views, arrow, border, data }: OptionsProps) {
+export default function Options({ title, views, arrow, border, data, width, height, wrap }: OptionsProps) {
   const [itens, setItens] = useState([])
 
   useEffect(() => {
@@ -61,11 +64,11 @@ export default function Options({ title, views, arrow, border, data }: OptionsPr
 
         </ContentHeader>
 
-        <ContentBody>
+        <ContentBody wrap={wrap}>
 
           {itens.map(item => (
             <>
-              <Cards name={item.name} url={item.url} />
+              <Cards name={item.name} url={item.url} width={width} height={height} />
             </>
           ))}
         </ContentBody>

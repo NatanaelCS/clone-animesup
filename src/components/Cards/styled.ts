@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 
 export const OptionsCard = styled.div`
-  width: 257.5px;
+  width: ${props => props.width ? '257.5px' : '165px'};
   margin-right:20px;
 `;
 
 export const PlayImage = styled.div`
   border-radius: 5px;
-  width: 100%;
-  height: 231px;
+  width: inherit;
+  height: ${props => props.height ? '145.05px' : '231px'} ;
   margin-top: 20px;
   margin-bottom:15px;
 `;
 
 export const CardImage = styled.div`
-  width: 100%;
-  height: 100%;
+  width: inherit;
+  height: inherit;
   border-radius: 8px;
   background-image: url(${props => props.src});
   background-position:center;
@@ -24,8 +24,8 @@ export const CardImage = styled.div`
 `;
 
 export const CardHover = styled.div`
-  width: 100%;
-  height:100%;
+  width: inherit;
+  height:inherit;
   border-radius: 5px;
 
   display: flex;
@@ -53,4 +53,4 @@ export const CardTitle = styled.div`
   text-align:center;
 `;
 
-//${props => props.width ? '165px' : '257.5px'};
+

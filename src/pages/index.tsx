@@ -7,7 +7,7 @@ import Options from '../components/Options'
 
 import database from '../database/database'
 
-export default function Home({ launch }) {
+export default function Home({ launch, recentlyAdded }) {
   return (
     <>
       <Head>
@@ -22,15 +22,19 @@ export default function Home({ launch }) {
           arrow
           border
           data={launch}
-          // width
+          width={false}
+          height={false}
+          wrap={false}
         />
         <Options
           title='Adicionados Recentemente'
           views
           arrow={false}
           border
-          data={launch}
-          // width={false}
+          data={recentlyAdded}
+          width
+          height
+          wrap
         />
         <Options
           title='Filmes'
@@ -38,7 +42,9 @@ export default function Home({ launch }) {
           arrow
           border
           data={launch}
-          // width
+          width={false}
+          height={false}
+          wrap={false}
         />
         <Options
           title='Últimos animes Adicionados'
@@ -46,7 +52,9 @@ export default function Home({ launch }) {
           arrow
           border={false}
           data={launch}
-          // width
+          width={false}
+          height={false}
+          wrap={false}
         />
       </Layout>
     </>
@@ -54,11 +62,12 @@ export default function Home({ launch }) {
 }
 
 export async function getStaticProps() {
-  const { launch } = database;
+  const { launch, recentlyAdded } = database;
 
   return {
     props: {
       launch,
+      recentlyAdded
     },
     revalidate: 10
   }

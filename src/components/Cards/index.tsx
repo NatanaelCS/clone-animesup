@@ -11,13 +11,15 @@ import {
 type CardsProps = {
   name: string
   url: string
+  width: boolean
+  height: boolean
 }
 
-export default function Cards({ name, url }: CardsProps) {
+export default function Cards({ width, url, name, height }: CardsProps) {
   return (
     <>
-      <OptionsCard>
-        <PlayImage>
+      <OptionsCard width={width}>
+        <PlayImage height={height}>
           <CardImage src={url}>
             <CardHover>
               <FaPlay
