@@ -1,22 +1,63 @@
+import Link from 'next/link'
+import {
+  Container,
+  ContentHeader,
+  Title,
+  ContentViews,
+  ViewAll,
+  ButtonSControll,
+  ContentBody,
+  OptionsCard,
+  PlayImage,
+  CardImage,
+  CardTitle
+} from './styled'
 
 
-export default function Options() {
+
+type OptionsProps = {
+  title: string
+  views: boolean
+  arrow: boolean
+  border: boolean
+}
+
+export default function Options({ title, views, arrow, border }: OptionsProps) {
   return (
     <>
-      <Container>
+      <Container border={border}>
         <ContentHeader>
-          <Title></Title>
+          <Title>{title}</Title>
 
-          <ViewAll></ViewAll>
-          <ButtonSControll></ButtonSControll>
+          <ContentViews>
+            {views
+              ? (
+                <ViewAll>
+
+                  <Link href=''>
+                    <a>Ver todos</a>
+                  </Link>
+                </ViewAll>
+              )
+              : ''
+            }
+
+            {arrow
+              ? (
+                <ButtonSControll>Arrow</ButtonSControll>
+              )
+              : ''
+            }
+          </ContentViews>
+
         </ContentHeader>
 
         <ContentBody>
           <OptionsCard>
             <PlayImage>
-              <CardImage />
+              <CardImage src='https://image.tmdb.org/t/p/w185/kSltzpIOKIjXGWgxc07rzikynvG.jpg' />
             </PlayImage>
-            <CardTitle></CardTitle>
+            <CardTitle>Hataraku Saibou</CardTitle>
           </OptionsCard>
         </ContentBody>
       </Container>

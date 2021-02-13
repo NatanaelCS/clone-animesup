@@ -3,6 +3,7 @@ import React from 'react'
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import Links from '../components/Links'
+import Options from '../components/Options'
 
 export default function Home() {
   return (
@@ -13,7 +14,29 @@ export default function Home() {
 
       <Layout>
         <Links />
-
+        <Options
+          title='Lançamentos'
+          views={false}
+          arrow
+          border
+        />
+        <Options
+          title='Adicionados Recentemente'
+          views
+          arrow={false}
+          border
+        />
+        <Options
+          title='Filmes'
+          views
+          arrow
+          border
+        />
+        <Options
+          title='Últimos animes Adicionados'
+          views
+          arrow
+        />
       </Layout>
     </>
   )
