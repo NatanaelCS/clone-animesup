@@ -9,7 +9,8 @@ import {
   ContentViews,
   ViewAll,
   ButtonSControll,
-  ContentBody
+  ContentBody,
+  ScrollX
 } from './styled'
 
 
@@ -30,10 +31,55 @@ type OptionsProps = {
 
 export default function Options({ title, views, arrow, border, data, width, height, wrap }: OptionsProps) {
   const [itens, setItens] = useState([])
+  const [scrollX, setScrollX] = useState(0)
 
   useEffect(() => {
     setItens(data)
   }, [])
+
+  function goPrev(): any {
+    let prev = scrollX
+    prev--
+
+    if (prev < 0) {
+      prev = -(185 * 4)
+
+      setScrollX(prev)
+    }
+
+    updateMargin()
+  }
+
+  function goNext() {
+    let prev = scrollX
+    prev++
+
+    if (prev > -740) {
+      prev = 0
+
+      setScrollX(prev)
+    }
+
+    updateMargin()
+
+  }
+
+  function updateMargin() {
+    let newMargin = scrollX
+
+    if (newMargin++) {
+      newMargin = scrollX + 185
+
+      setScrollX(newMargin)
+    } else if (newMargin--) {
+      newMargin = scrollX - 185
+
+      setScrollX(newMargin)
+    }
+
+
+
+  }
 
   return (
     <>
@@ -57,8 +103,14 @@ export default function Options({ title, views, arrow, border, data, width, heig
             {arrow
               ? (
                 <ButtonSControll>
-                  <AiFillCaretLeft />
-                  <AiFillCaretRight />
+                  <AiFillCaretLeft
+                    onClick={goPrev}
+                    className='prev'
+                  />
+                  <AiFillCaretRight
+                    onClick={goNext}
+                    className='next'
+                  />
                 </ButtonSControll>
               )
               : ''
@@ -67,13 +119,19 @@ export default function Options({ title, views, arrow, border, data, width, heig
 
         </ContentHeader>
 
-        <ContentBody wrap={wrap}>
-
-          {itens.map(item => (
-            <>
-              <Cards name={item.name} url={item.url} width={width} height={height} />
-            </>
-          ))}
+        <ContentBody>
+          <ScrollX
+            wrap={wrap}
+            style={{
+              marginLeft: scrollX
+            }}
+          >
+            {itens.map(item => (
+              <>
+                <Cards name={item.name} url={item.url} width={width} height={height} />
+              </>
+            ))}
+          </ScrollX>
         </ContentBody>
       </Container>
     </>

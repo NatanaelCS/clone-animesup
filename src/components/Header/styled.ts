@@ -7,9 +7,8 @@ export const HeaderArea = styled.header`
   display: flex;
   align-items: center;
   justify-content:center;
-  position:fixed;
+  position: ${props => props.scroll ? 'fixed' : 'relative'};
   box-shadow: 0 1px 2px black;
-  margin-top: -70px;
 `;
 
 export const Container = styled.div`

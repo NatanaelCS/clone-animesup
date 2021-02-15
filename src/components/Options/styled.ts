@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display:flex;
+  flex-direction:column;
   box-sizing: border-box;
   max-width: 1200px;
   margin: 40px 40px 0px 50px;
@@ -44,16 +46,23 @@ export const ViewAll = styled.div`
 `;
 
 export const ButtonSControll = styled.div`
+   .prev {
+     cursor: pointer;
+   }
 
+   .next {
+     cursor: pointer;
+   }
 `;
 
 export const ContentBody = styled.div`
-  display:flex;
-  width:100%;
+  flex:1;
   overflow:hidden;
-  flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'} ;
 `;
 
-
-
-
+export const ScrollX = styled.div`
+  transition: all ease 0.3s;
+  display:flex;
+  width: calc(185px * 10);
+  flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'} ;
+`

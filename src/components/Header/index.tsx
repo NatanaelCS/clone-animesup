@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BsArrowDown, BsFillPersonFill } from 'react-icons/bs'
 import { AiOutlineSwap } from 'react-icons/ai'
 import { FiSearch } from 'react-icons/fi'
@@ -9,8 +9,27 @@ import logoImage from '../../images/logo3.png'
 import Link from 'next/link'
 
 export default function Header() {
+  const [scrollFixed, setScrollFixed] = useState(false)
+
+  useEffect(() => {
+    function scrollListener() {
+      if (window.scrollY > 1) {
+        setScrollFixed(true)
+      } else {
+        setScrollFixed(false)
+      }
+    }
+
+    window.addEventListener('scroll', scrollListener)
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener)
+    }
+
+  }, [])
+
   return (
-    <HeaderArea>
+    <HeaderArea scroll={scrollFixed}>
       <Container>
         <Logo>
           <Link href='/'>
