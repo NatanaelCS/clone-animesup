@@ -3,19 +3,20 @@ import styled from 'styled-components';
 export const HeaderArea = styled.header`
   height: 70px;
   width: 100%;
-  background-color: rgba(15, 15, 15, .99);
+  background-color: rgba(15,15,15,.80);
   display: flex;
   align-items: center;
   justify-content:center;
   position:fixed;
   box-shadow: 0 1px 2px black;
+  margin-top: -70px;
 `;
 
 export const Container = styled.div`
   max-width: 1200px;
   width:100%;
+
   height: 100%;
-  background-color: rgba(15, 15, 15, .99);
   display: flex;
   align-items: center;
   color: #fff;
