@@ -15,12 +15,25 @@ type CardsProps = {
   height: boolean
 }
 
-export default function Cards({ width, url, name, height }: CardsProps) {
+export default function Cards(card: CardsProps) {
   return (
     <>
-      <OptionsCard width={width}>
-        <PlayImage height={height}>
-          <CardImage src={url}>
+      <OptionsCard
+        style={{
+          width: `${card.width ? '257.5px' : '165px'}`
+        }}
+      >
+        <PlayImage
+          style={{
+            height: `${card.height ? '145.05px' : '231px'}`
+          }}
+        >
+          <CardImage
+            style={{
+              backgroundImage: `url(${card.url})`
+            }}
+
+          >
             <CardHover>
               <FaPlay
                 color='#fff'
@@ -28,7 +41,7 @@ export default function Cards({ width, url, name, height }: CardsProps) {
             </CardHover>
           </CardImage>
         </PlayImage>
-        <CardTitle>{name}</CardTitle>
+        <CardTitle>{card.name}</CardTitle>
       </OptionsCard>
     </>
   )

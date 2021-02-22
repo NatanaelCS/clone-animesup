@@ -7,7 +7,6 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: 40px 40px 0px 50px;
   padding-bottom: 20px;
-  border-bottom: ${props => props.border ? '1px solid rgba(37,37,37,.7)' : '0'} ;
 `;
 
 export const ContentHeader = styled.div`
@@ -64,5 +63,4 @@ export const ScrollX = styled.div`
   transition: all ease 0.3s;
   display:flex;
   width: calc(185px * 10);
-  flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'} ;
 `

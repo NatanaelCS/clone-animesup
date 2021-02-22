@@ -29,7 +29,11 @@ export default function Header() {
   }, [])
 
   return (
-    <HeaderArea scroll={scrollFixed}>
+    <HeaderArea
+      style={{
+        position: scrollFixed ? 'fixed' : 'relative'
+      }}
+    >
       <Container>
         <Logo>
           <Link href='/'>

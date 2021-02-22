@@ -14,7 +14,6 @@ import {
 } from './styled'
 
 
-
 type OptionsProps = {
   title: string
   views: boolean
@@ -29,66 +28,25 @@ type OptionsProps = {
   wrap: boolean
 }
 
-export default function Options({ title, views, arrow, border, data, width, height, wrap }: OptionsProps) {
+export default function Options(option: OptionsProps) {
   const [itens, setItens] = useState([])
-  const [scrollX, setScrollX] = useState(0)
 
   useEffect(() => {
-    setItens(data)
+    setItens(option.data)
   }, [])
-
-  function goPrev(): any {
-    let prev = scrollX
-    prev--
-
-    if (prev < 0) {
-      prev = -(185 * 4)
-
-      setScrollX(prev)
-    }
-
-    updateMargin()
-  }
-
-  function goNext() {
-    let prev = scrollX
-    prev++
-
-    if (prev > -740) {
-      prev = 0
-
-      setScrollX(prev)
-    }
-
-    updateMargin()
-
-  }
-
-  function updateMargin() {
-    let newMargin = scrollX
-
-    if (newMargin++) {
-      newMargin = scrollX + 185
-
-      setScrollX(newMargin)
-    } else if (newMargin--) {
-      newMargin = scrollX - 185
-
-      setScrollX(newMargin)
-    }
-
-
-
-  }
 
   return (
     <>
-      <Container border={border}>
+      <Container
+        style={{
+          borderBottom: `${option.border ? '1px solid rgba(37,37,37,.7)' : '0'}`
+        }}
+      >
         <ContentHeader>
-          <Title>{title}</Title>
+          <Title>{option.title}</Title>
 
           <ContentViews>
-            {views
+            {option.views
               ? (
                 <ViewAll>
                   <span>28,052</span>
@@ -100,15 +58,15 @@ export default function Options({ title, views, arrow, border, data, width, heig
               : ''
             }
 
-            {arrow
+            {option.arrow
               ? (
                 <ButtonSControll>
                   <AiFillCaretLeft
-                    onClick={goPrev}
+                    // onClick={goPrev}
                     className='prev'
                   />
                   <AiFillCaretRight
-                    onClick={goNext}
+                    // onClick={goNext}
                     className='next'
                   />
                 </ButtonSControll>
@@ -121,14 +79,13 @@ export default function Options({ title, views, arrow, border, data, width, heig
 
         <ContentBody>
           <ScrollX
-            wrap={wrap}
             style={{
-              marginLeft: scrollX
+              flexWrap: option.wrap ? 'wrap' : 'nowrap'
             }}
           >
             {itens.map(item => (
               <>
-                <Cards name={item.name} url={item.url} width={width} height={height} />
+                <Cards name={item.name} url={item.url} width={option.width} height={option.height} />
               </>
             ))}
           </ScrollX>

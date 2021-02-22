@@ -7,7 +7,6 @@ export const HeaderArea = styled.header`
   display: flex;
   align-items: center;
   justify-content:center;
-  position: ${props => props.scroll ? 'fixed' : 'relative'};
   box-shadow: 0 1px 2px black;
 `;
 

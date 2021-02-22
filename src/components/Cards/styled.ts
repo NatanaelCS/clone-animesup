@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 export const OptionsCard = styled.div`
-  width: ${props => props.width ? '257.5px' : '165px'};
   margin-right:20px;
 `;
 
 export const PlayImage = styled.div`
   border-radius: 5px;
   width: inherit;
-  height: ${props => props.height ? '145.05px' : '231px'} ;
   margin-top: 20px;
   margin-bottom:15px;
 `;
@@ -17,7 +15,6 @@ export const CardImage = styled.div`
   width: inherit;
   height: inherit;
   border-radius: 8px;
-  background-image: url(${props => props.src});
   background-position:center;
   background-repeat: no-repeat;
   background-size:cover;
